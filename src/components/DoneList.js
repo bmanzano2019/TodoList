@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { List, Card } from 'antd';
 
 import { Table } from 'antd';
 
@@ -19,17 +18,20 @@ class DoneList extends Component {
         dataIndex: 'createdAt',
         key: 'id',
         render: text => <b>{text}</b>,
+        width : 300
       }
     ];
 
     return (
       <div>
         <h1 id="appName">TodoList</h1>
+        <div className="padding-100">
         <Table 
           columns={columns}
           dataSource={this.props.doneTodos}
-          pagination={{ pageSize: 10 }}
+          pagination={{ pageSize: 10 }}          
         />
+        </div>
       </div>
     );
   }
