@@ -8,9 +8,7 @@ class DoneList extends Component {
       <div>
         <h1 id="appName">TodoList</h1>
         <h2 id="appName">Done Items</h2>
-        <ul>
-          <li>{doneTodos}</li>
-        </ul>
+          {doneTodos}
       </div>
     );
   }
