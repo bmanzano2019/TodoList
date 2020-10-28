@@ -89,12 +89,18 @@ input#todoInput:focus, #todoItem:focus {
 
 [class^='ant-table'] {
   color: white;
-  background-color: #001529;
 }
 
 [class^='ant-table-cell']:hover {
   color: black;
-  background: #001529;
+}
+
+.ant-table-container {
+  background-color: #1890ff;
+}
+
+.ant-table-cell {
+  color: black;
 }
 
 .padding-100 {
