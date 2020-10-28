@@ -1,5 +1,5 @@
+import { notification } from 'antd';
 import React, { Component } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { addTodos } from '../api/todos';
 
@@ -18,27 +18,27 @@ class TodoGenerator extends Component {
     event.preventDefault();
     const text = event.target.todoInput.value;
     if (this.isTodoEmpty(text)) {
-      toast.error("Empty Input!", {
-        position: "top-center",
-        autoClose: 1000,
-        closeOnClick: true
+      notification.error({
+        message: 'Empty Input!',
+        duration : 1,
       });
       return;
     }
     if (this.isTodoExist(text)) {
-      toast.error(text + " already exist!", {
-        position: "top-center",
-        autoClose: 1500,
-        closeOnClick: true
+      notification.error({
+        message: text + " already exist!",
+        duration : 1,
       });
       return;
     }
 
     addTodos(text).then(response => {
       this.props.addTodo(response.data);
-      console.log(response);
+      notification.success({
+        message: text + " has been added!",
+        duration : 1,
+      });
     })
-
     event.target.todoInput.value = "";
   }
 
@@ -47,11 +47,10 @@ class TodoGenerator extends Component {
       <div id="todoGenerator">
         <form onSubmit={this.onSubmit}>
           <span>
-            <input type="text" name="todoInput" id="todoInput" />
+            <input type="text" name="todoInput" id="todoInput" placeholder="add something..." />
             <input type="submit" value="Add Item" id="todoSubmit" />
           </span>
         </form>
-        <ToastContainer />
       </div>
     );
   }
