@@ -11,3 +11,7 @@ export const addTodos = (text) => {
 export const changeStatus = (id, done) => {
     return api.put(`/api/todos/${id}`, {done: !done})
 }
+
+export const deleteTodo = (id) => {
+    return api.delete(`/api/todos/${id}`)
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { changeStatus } from '../api/todos';
+import { changeStatus, deleteTodo } from '../api/todos';
 
 class TodoItem extends Component {
 
@@ -28,7 +28,11 @@ class TodoItem extends Component {
     }
 
     const onDelete = () => {
-      this.props.deleteTodo(this.props.todo.id);
+
+      deleteTodo(this.props.todo.id).then(response => {
+        this.props.deleteTodo(this.props.todo.id);
+      })
+
       toast.success("Successfully removed " + this.props.todo.text + ".", {
         autoClose: 1500,
         closeOnClick: true
