@@ -87,6 +87,16 @@ input#todoInput:focus, #todoItem:focus {
   color: white;
 }
 
+[class^='ant-result-title'] {
+  font-size: 70px;
+  font-weight: bold;
+}
+
+[class^='ant-result-subtitle'] {
+  font-size: 40px;
+  font-style: italic;
+}
+
 [class^='ant-table'] {
   color: white;
 }
