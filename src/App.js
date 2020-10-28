@@ -1,6 +1,6 @@
 import './App.css';
 import TodoList from './components/TodoList';
-import {  Route, Link, Switch, BrowserRouter } from 'react-router-dom';
+import { Route, Link, Switch, BrowserRouter } from 'react-router-dom';
 import DoneListContainer from './containers/DoneListContainer';
 import PageNotFound from './components/PageNotFound';
 
@@ -10,6 +10,7 @@ import { getTodos } from './api/todos';
 import { initTodos } from './actions';
 
 import { Menu } from 'antd';
+import { HomeOutlined, CheckOutlined } from '@ant-design/icons';
 // import * as Ant from 'antd';
 
 class App extends Component {
@@ -24,12 +25,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-        </header>
         <BrowserRouter>
-          <Menu mode="horizontal" defaultSelectedKeys={["home"]}>
-            <Menu.Item key="home"><Link to="/">Home Page</Link></Menu.Item>
-            <Menu.Item key="done"><Link to="/done">Done Page</Link></Menu.Item>
+          <Menu mode="horizontal" defaultSelectedKeys={["home"]} theme="dark" className="todoMenu">
+            <Menu.Item key="home" icon={<HomeOutlined />}><Link to="/">Todo List</Link></Menu.Item>
+            <Menu.Item key="done" icon={<CheckOutlined />}><Link to="/done">Done List</Link></Menu.Item>
           </Menu>
           <Switch>
             <Route exact path="/done" component={DoneListContainer}></Route>
