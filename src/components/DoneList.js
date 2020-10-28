@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import TodoItemContainer from '../containers/TodoItemContainer';
 
 class DoneList extends Component {
   render() {
