@@ -32,7 +32,7 @@ class App extends Component {
             <Menu.Item key="done"><Link to="/done">Done Page</Link></Menu.Item>
           </Menu>
           <Switch>
-            <Route path="/done" component={DoneListContainer}></Route>
+            <Route exact path="/done" component={DoneListContainer}></Route>
             <Route exact path="/" component={TodoList}></Route>
             <Route path="*" component={PageNotFound}></Route>
           </Switch>
