@@ -7,3 +7,7 @@ export const getTodos = () => {
 export const addTodos = (text) => {
     return api.post('/api/todos', {text})
 }
+
+export const changeStatus = (id, done) => {
+    return api.put(`/api/todos/${id}`, {done: !done})
+}

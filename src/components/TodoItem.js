@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { changeStatus } from '../api/todos';
 
 class TodoItem extends Component {
 
@@ -9,7 +10,10 @@ class TodoItem extends Component {
     const todoIsDone = this.props.todo.done;
 
     const onClick = () => {
-      this.props.changeStatus(this.props.todo.id);
+      changeStatus(this.props.todo.id, todoIsDone).then(response => {
+        this.props.changeStatus(this.props.todo.id);
+      });
+
       if (this.props.todo.done) {
         toast.error(this.props.todo.text + " is marked as unfinished.", {
           autoClose: 1500,
