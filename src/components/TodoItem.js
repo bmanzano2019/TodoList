@@ -1,8 +1,8 @@
+import { notification } from 'antd';
 import React, { Component } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { changeStatus, deleteTodo } from '../api/todos';
-
+import { DeleteFilled } from '@ant-design/icons';
 class TodoItem extends Component {
 
   render() {
@@ -15,14 +15,14 @@ class TodoItem extends Component {
       });
 
       if (this.props.todo.done) {
-        toast.error(this.props.todo.text + " is marked as unfinished.", {
-          autoClose: 1500,
-          closeOnClick: true
+        notification.error({
+          message: this.props.todo.text + " is marked as unfinished.",
+          duration: 1,
         });
       } else {
-        toast.success(this.props.todo.text + " is marked as finished.", {
-          autoClose: 1500,
-          closeOnClick: true
+        notification.success({
+          message: this.props.todo.text + " is marked as finished.",
+          duration: 1,
         });
       }
     }
@@ -32,12 +32,12 @@ class TodoItem extends Component {
       deleteTodo(this.props.todo.id).then(response => {
         this.props.deleteTodo(this.props.todo.id);
       })
-
-      toast.success("Successfully removed " + this.props.todo.text + ".", {
-        autoClose: 1500,
-        closeOnClick: true
+      notification.success({
+        message: "Successfully removed " + this.props.todo.text + ".",
+        duration: 1,
       });
     }
+
 
     const style = {
       textDecoration: todoIsDone ? 'line-through' : '',
@@ -47,9 +47,8 @@ class TodoItem extends Component {
       <div>
         <div id="todoItem">
           <span style={style} className="col-92" onClick={onClick}>{this.props.todo.text}</span>
-          <span className="col-8" onClick={onDelete}><span id="deleteIcon">X</span></span>
+          <span className="col-8" onClick={onDelete}><span id="deleteIcon"><DeleteFilled /> </span></span>
         </div>
-        <ToastContainer />
       </div>
     );
   }
