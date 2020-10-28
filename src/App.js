@@ -9,6 +9,9 @@ import { connect } from 'react-redux';
 import { getTodos } from './api/todos';
 import { initTodos } from './actions';
 
+import { Menu } from 'antd';
+// import * as Ant from 'antd';
+
 class App extends Component {
 
   componentDidMount() {
@@ -24,12 +27,10 @@ class App extends Component {
         <header className="App-header">
         </header>
         <BrowserRouter>
-        <li>
-              <Link to="/">Home Page</Link>
-            </li>
-            <li>
-              <Link to="/done">Done Page</Link>
-            </li>
+          <Menu mode="horizontal" defaultSelectedKeys={["home"]}>
+            <Menu.Item key="home"><Link to="/">Home Page</Link></Menu.Item>
+            <Menu.Item key="done"><Link to="/done">Done Page</Link></Menu.Item>
+          </Menu>
           <Switch>
             <Route path="/done" component={DoneListContainer}></Route>
             <Route exact path="/" component={TodoList}></Route>
