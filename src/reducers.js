@@ -2,6 +2,10 @@ import { combineReducers } from "redux";
 
 const todos = (state = [], action) => {
   switch (action.type) {
+
+    case "INIT_TODOS":
+      return action.payload;
+
     case "ADD_TODO":
       return [...state, action.payload];
 

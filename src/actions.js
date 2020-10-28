@@ -9,3 +9,7 @@ export const deleteTodo = (id) => {
 export const changeStatus = (id) => {
   return { type: "CHANGE_STATUS", payload: id };
 }
+
+export const initTodos = (todos) => {
+  return { type: "INIT_TODOS", payload: todos };
+}
