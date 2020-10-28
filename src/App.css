@@ -1,28 +1,32 @@
 .App {
   text-align: center;
+  color: white;
 }
-body{
+
+body {
   background-color: #282c34;
 }
-.col-92::selection,.col-8::selection,#deleteIcon::selection {
+
+.col-92::selection, .col-8::selection, #deleteIcon::selection {
   color: none;
   background: none;
 }
-#appName{
-  color:white;
+
+#appName {
+  color: white;
 }
 
-#todoInput{
+#todoInput {
   background-color: #282c34;
-  border : none;
+  border: none;
   color: white;
-  text-align : center;
+  text-align: center;
   height: 30px;
   border-bottom: 1px solid white;
   font-size: 25px;
 }
 
-input#todoInput:focus, #todoItem:focus{
+input#todoInput:focus, #todoItem:focus {
   outline: none;
 }
 
@@ -38,43 +42,70 @@ input#todoInput:focus, #todoItem:focus{
   border-bottom-style: solid;
   border-bottom-width: 3px;
   transition: text-shadow 0.3s ease;
-  background-color: #19698C;
+  background-color: rgb(24, 144, 255);
   border-color: #384B64;
 }
 
-#todoSubmit:hover, #todoItem:hover{
+#todoSubmit:hover, #todoItem:hover {
   cursor: pointer;
 }
 
-#todoItem{
-  color:white;
-  border:white;
-  width : 500px;
+#todoItem {
+  color: white;
+  border: white;
+  width: 500px;
   margin: auto;
   border: 2px solid white;
-  height : 35px;
+  height: 35px;
   margin-bottom: 5px;
-  text-align:left;
+  text-align: left;
   padding-left: 10px;
 }
 
 .col-8 {
-  background-color: salmon;
-  border-color: rgb(150,120,120);
+  background-color: rgb(151, 6, 18);
+  border-color: rgb(150, 120, 120);
   float: left;
   width: 8%;
-  text-align:center;
-  height : 100%;
+  text-align: center;
+  height: 100%;
 }
 
 .col-92 {
   float: left;
   width: 92%;
   margin-top: 6px;
-  outline:none;
+  outline: none;
 }
 
-#deleteIcon{
-  position:relative;
+#deleteIcon {
+  position: relative;
   top: 4.5px;
+}
+
+[class^='ant-result'] {
+  color: white;
+}
+
+[class^='ant-table'] {
+  color: white;
+  background-color: #001529;
+}
+
+[class^='ant-table-cell']:hover {
+  color: black;
+  background: #001529;
+}
+
+.padding-100 {
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
+.ant-pagination-next {
+  margin-right: 10px;
+}
+
+.todoMenu {
+  align-items: center;
 }
