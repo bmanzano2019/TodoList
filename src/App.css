@@ -21,7 +21,7 @@ body {
   border: none;
   color: white;
   text-align: center;
-  height: 30px;
+  height: 40px;
   border-bottom: 1px solid white;
   font-size: 25px;
 }
@@ -44,6 +44,11 @@ input#todoInput:focus, #todoItem:focus {
   transition: text-shadow 0.3s ease;
   background-color: rgb(24, 144, 255);
   border-color: #384B64;
+}
+
+#todoSubmit:hover {
+  border-color: rgb(24, 144, 255);
+  background-color: #5a697c;
 }
 
 #todoSubmit:hover, #todoItem:hover {
@@ -97,17 +102,17 @@ input#todoInput:focus, #todoItem:focus {
   font-style: italic;
 }
 
-[class^='ant-table'] {
+/* [class^='ant-table'] {
   color: white;
-}
-
+} */
+/* 
 [class^='ant-table-cell']:hover {
   color: black;
-}
+} */
 
-.ant-table-container {
+/* .ant-table-container {
   background-color: #1890ff;
-}
+} */
 
 .ant-table-cell {
   color: black;
@@ -124,4 +129,11 @@ input#todoInput:focus, #todoItem:focus {
 
 .todoMenu {
   align-items: center;
+}
+
+div#divOverflow{
+  overflow:auto;
+  height: 500px;
+  margin-right:20px;
+  margin-left:25px;
 }

@@ -7,8 +7,10 @@ class TodoList extends Component {
     return (
       <div>
         <h1 id="appName">TodoList</h1>
-        <TodoGeneratorContainer/>
-        <TodoGroupContainer/>
+        <TodoGeneratorContainer />
+        <div id="divOverflow">
+          <TodoGroupContainer />
+          </div>
       </div>
     );
   }
