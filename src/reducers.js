@@ -14,7 +14,7 @@ const todos = (state = [], action) => {
       return todos;
 
     case "CHANGE_STATUS":
-      return state.map(todo => todo.id === action.payload ? { ...todo, done: !todo.done } : todo);
+      return state.map(todo => todo.id === action.payload ? { ...todo, status: !todo.status } : todo);
 
     default:
       return state;

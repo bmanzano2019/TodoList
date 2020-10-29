@@ -7,14 +7,14 @@ class TodoItem extends Component {
 
   render() {
 
-    const todoIsDone = this.props.todo.done;
+    const todoIsDone = this.props.todo.status;
 
     const onClick = () => {
       changeStatus(this.props.todo.id, todoIsDone).then(response => {
         this.props.changeStatus(this.props.todo.id);
       });
 
-      if (this.props.todo.done) {
+      if (this.props.todo.status) {
         notification.error({
           message: this.props.todo.text + " is marked as unfinished.",
           duration: 1,
@@ -28,14 +28,13 @@ class TodoItem extends Component {
     }
 
     const onDelete = () => {
-
       deleteTodo(this.props.todo.id).then(response => {
         this.props.deleteTodo(this.props.todo.id);
+        notification.success({
+          message: "Successfully removed " + this.props.todo.text + ".",
+          duration: 1,
+        });
       })
-      notification.success({
-        message: "Successfully removed " + this.props.todo.text + ".",
-        duration: 1,
-      });
     }
 
 
@@ -43,6 +42,7 @@ class TodoItem extends Component {
       textDecoration: todoIsDone ? 'line-through' : '',
       color: todoIsDone ? 'gray' : 'white'
     }
+
     return (
       <div>
         <div id="todoItem">
